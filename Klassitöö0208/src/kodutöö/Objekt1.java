@@ -3,46 +3,47 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package klassitöö;
+package kodutöö;
 
 /**
  *
  * @author student
  */
-public class Pall {
+public class Objekt1 {
+    
 
    protected double x;    
    protected double y;    
-   protected double r;
-   //Lisage pallile raadius
-   //Lisage käsk kontrollimaks, kas kaks palli puutuvad kokku
+   protected double z;
    
-   public Pall(double x, double y, double r){
+   public Objekt1(double x, double y, double r){
        this.x=x;
        this.y=y;
-       this.r=r;
+       this.z=z;
    }
    
-   public Pall(double x, double y){
+   public Objekt1(double x, double y){
        this(x, y, 1);
    }
 
-   public boolean kasPuutub(Pall teine){
-       return kaugusPallist(teine)<this.getR()+teine.getR();
+   public boolean kasPuutub(Objekt1 teine){
+       return kaugusPallist(teine)<this.getR()+teine.getZ();
    }
    public double kaugusNullist(){
       return Math.sqrt(x*x+y*y);
    }
    public double getX(){return x;}
    public double getY(){return y;}
-   public double getR(){return r;}
-   public double kaugusPallist(Pall teine){
+   public double getR(){return z;}
+   public double kaugusPallist(Objekt1 teine){
        double dx=getX()-teine.getX();
        double dy=getY()-teine.getY();
        return Math.sqrt(dx*dx+dy*dy);
    }
    @Override
    public String toString(){
-      return "Pall kohal ("+x+", "+y+" - raadius "+r+")";
+      return "Pall kohal ("+x+", "+y+" - raadius "+z+")";
    }
 }
+
+
